@@ -1,16 +1,15 @@
-from app.customer import Customer
+from typing import Dict, List
 
 
 class Shop:
-    def __init__(self, name: str, location: list, products: dict) -> None:
-        self.name = name
-        self.location = location
-        self.products = products
+    def __init__(self, name: str, location: List[float], products: Dict[str, float]) -> None:
+        self.name: str = name
+        self.location: List[float] = location
+        self.products: Dict[str, float] = products
 
-    def purchase(self, product_cart: dict) -> float:
-        price = 0
-        for key, value in product_cart.items():
-            for key2, value2 in self.products.items():
-                if key == key2:
-                    price += value * value2
+    def purchase(self, product_cart: Dict[str, int]) -> float:
+        price: float = 0.0
+        for key, quantity in product_cart.items():
+            if key in self.products:
+                price += quantity * self.products[key]
         return round(price, 2)
