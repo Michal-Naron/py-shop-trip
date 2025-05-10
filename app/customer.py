@@ -21,7 +21,9 @@ class Customer:
     def get_money(self) -> None:
         print(f"{self.name} has {self.money} dollars")
 
-    def trip_to_shop(self, shop: Shop, fuel_price: float) -> Tuple[float, Shop]:
+    def trip_to_shop(
+            self, shop: Shop, fuel_price: float
+    ) -> Tuple[float, Shop]:
         total_cost: float = 0.0
         fuel_cost = self.car.cost_of_fuel_all_way(
             self.location, shop.location

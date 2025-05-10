@@ -1,12 +1,11 @@
 import json
-from datetime import datetime
 from app.car import Car
 from app.customer import Customer
 from app.shop import Shop
 
-
 def shop_trip() -> None:
-    with open("/Users/michal/Desktop/mate_academy/py-shop-trip/app/config.json", "r") as f:
+    with open("/Users/michal/Desktop/mate_academy/py-shop-trip/app/"
+              "config.json", "r") as f:
         data = json.load(f)
         for i in data["customers"]:
             customer = Customer(
@@ -27,7 +26,8 @@ def shop_trip() -> None:
             if the_cheapest_shop[0] < customer.money:
                 print(f"{customer.name} rides to {the_cheapest_shop[1].name}")
             else:
-                print(f"{customer.name} doesn't have enough money to make a purchase in any shop")
+                print(f"{customer.name} doesn't have enough money "
+                      f"to make a purchase in any shop")
                 continue
             print("")
             print("Date: 04/01/2021 12:33:41")
