@@ -2,7 +2,12 @@ from typing import Dict, List
 
 
 class Shop:
-    def __init__(self, name: str, location: List[float], products: Dict[str, float]) -> None:
+    def __init__(
+        self,
+        name: str,
+        location: List[float],
+        products: Dict[str, float]
+    ) -> None:
         self.name: str = name
         self.location: List[float] = location
         self.products: Dict[str, float] = products

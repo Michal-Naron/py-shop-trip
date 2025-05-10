@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Tuple
+from typing import Dict, List, Tuple
 from app.shop import Shop
 from app.car import Car
 
@@ -23,7 +23,10 @@ class Customer:
 
     def trip_to_shop(self, shop: Shop, fuel_price: float) -> Tuple[float, Shop]:
         total_cost: float = 0.0
-        total_cost += self.car.cost_of_fuel_all_way(self.location, shop.location) * fuel_price
+        fuel_cost = self.car.cost_of_fuel_all_way(
+            self.location, shop.location
+        ) * fuel_price
+        total_cost += fuel_cost
         total_cost += shop.purchase(self.products)
         print(f"{self.name}'s trip to the {shop.name} costs {round(total_cost, 2)}")
         return round(total_cost, 2), shop
