@@ -39,4 +39,3 @@ def shop_trip() -> None:
             print("You have bought:")
             customer.list_of_bought_stuff(the_cheapest[1])
             print(f"\n{customer.name} rides home")
-
