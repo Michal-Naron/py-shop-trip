@@ -3,6 +3,7 @@ from app.car import Car
 from app.customer import Customer
 from app.shop import Shop
 
+
 def shop_trip() -> None:
     with open("/Users/michal/Desktop/mate_academy/py-shop-trip/app/"
               "config.json", "r") as f:
@@ -18,7 +19,8 @@ def shop_trip() -> None:
             customer.get_money()
             list_of_shops = []
             for shop in data["shops"]:
-                shop_instance = Shop(shop["name"], shop["location"], shop["products"])
+                shop_instance = Shop(
+                    shop["name"], shop["location"], shop["products"])
                 list_of_shops.append(
                     customer.trip_to_shop(shop_instance, data["FUEL_PRICE"])
                 )

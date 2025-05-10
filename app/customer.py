@@ -30,7 +30,8 @@ class Customer:
         ) * fuel_price
         total_cost += fuel_cost
         total_cost += shop.purchase(self.products)
-        print(f"{self.name}'s trip to the {shop.name} costs {round(total_cost, 2)}")
+        print(f"{self.name}'s trip to the {shop.name}"
+              f" costs {round(total_cost, 2)}")
         return round(total_cost, 2), shop
 
     def list_of_bought_stuff(self, shop: Shop) -> float:
@@ -38,7 +39,8 @@ class Customer:
         for key, value in self.products.items():
             price: float = shop.products[key] * value
             total_cost += price
-            price_display: float | int = int(price) if price % 1 == 0 else price
+            price_display: float | int = int(price) if price % 1 == 0\
+                else price
             print(f"{value} {key}s for {price_display} dollars")
         print(f"Total cost is {total_cost} dollars")
         print("See you again!")
