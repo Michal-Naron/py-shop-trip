@@ -1,5 +1,4 @@
 import json
-from datetime import datetime
 from app.car import Car
 from app.customer import Customer
 from app.shop import Shop
@@ -40,4 +39,4 @@ def shop_trip() -> None:
             print("You have bought:")
             customer.list_of_bought_stuff(the_cheapest[1])
             print(f"\n{customer.name} rides home")
-            current_money = customer
+
